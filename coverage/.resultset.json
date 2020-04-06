@@ -1,7 +1,30 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ginafrankel/Projects/week_4/Bookmark_manager/spec/features/showing_bookmarkes_spec.rb": {
+      "/Users/edwardphillips/Desktop/Projects/pairing-with-gina/bookmark_manager/spec/bookmark_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/edwardphillips/Desktop/Projects/pairing-with-gina/bookmark_manager/lib/bookmark.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/edwardphillips/Desktop/Projects/pairing-with-gina/bookmark_manager/spec/features/showing_bookmarkes_spec.rb": {
         "lines": [
           1,
           1,
@@ -22,6 +45,6 @@
         ]
       }
     },
-    "timestamp": 1586184446
+    "timestamp": 1586186529
   }
 }
