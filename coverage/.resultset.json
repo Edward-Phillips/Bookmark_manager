@@ -19,29 +19,19 @@
           null,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/edwardphillips/Desktop/Projects/pairing-with-gina/bookmark_manager/lib/bookmark.rb": {
-        "lines": [
-          1,
-          1,
+          null,
           null,
           1,
-          4,
-          4,
-          null,
           1,
           2,
-          null,
-          null,
           1,
-          0,
+          1,
+          null,
           null,
           null
         ]
       },
-      "/Users/edwardphillips/Desktop/Projects/pairing-with-gina/bookmark_manager/spec/features/showing_bookmarkes_spec.rb": {
+      "/Users/edwardphillips/Desktop/Projects/pairing-with-gina/bookmark_manager/spec/features/showing_bookmarks_spec.rb": {
         "lines": [
           1,
           1,
@@ -62,6 +52,6 @@
         ]
       }
     },
-    "timestamp": 1586252248
+    "timestamp": 1586296305
   }
 }

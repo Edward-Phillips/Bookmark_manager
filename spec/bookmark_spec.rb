@@ -15,3 +15,12 @@ require 'bookmark'
   # to see  if it is an array 
   # to see if they are bookmark instances 
 end
+
+describe "I'm a data scientist now!" do
+  context " So I can do all sorts of stuff wiht my bookmarks database:" do
+    let (:mylist) {Bookmark.all}
+    it " 1 - I can get all those booknmarks I had from before!" do
+      expect(mylist).to include("http://www.makersacademy.com", "http://www.google.com", "http://www.destroyallsoftware.com")
+    end
+  end
+end

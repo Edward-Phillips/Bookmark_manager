@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/bookmark'
 class Bookmarker < Sinatra::Base
   enable :sessions
   get '/' do
@@ -7,6 +8,7 @@ class Bookmarker < Sinatra::Base
   run! if app_file == $0
 
   get '/bookmarks' do 
+    @list = Bookmark.all
     erb(:bookmarks)
   end 
 end

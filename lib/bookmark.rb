@@ -1,3 +1,5 @@
+require 'pg'
+
 class Bookmark
   attr_reader :name, :address
 
@@ -6,7 +8,7 @@ class Bookmark
     @address = where
   end
   def self.all
-    @bookmarks =[Bookmark.new(where:"linke",who:"name"),Bookmark.new(where:"link",who:"name")]
+    @bookmarks =[Bookmark.new(where:"links",who:"bookmark one"),Bookmark.new(where:"link",who:"bookmark_two")]
   end
 
   def self.new_bookmark(me, there)
