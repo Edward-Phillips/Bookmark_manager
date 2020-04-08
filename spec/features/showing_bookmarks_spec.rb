@@ -11,6 +11,6 @@ feature "showing bookmarks" do
   scenario " '/bookmarks' page should list all bookarks" do
     visit('/')
     click_button 'View Bookmarks'
-    expect(page).to have_content('Bookmarks:')
+    expect(page).to have_content('http://makersacademy.com')
   end
 end
