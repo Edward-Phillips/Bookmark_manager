@@ -3,4 +3,9 @@ feature 'Creating bookmarks' do
     visit('/')
     expect(page).to have_button('Create Bookmarks')
   end
+  scenario "clicking create bookmarks should take you to a page to enter in the bookmark" do
+    visit('/')
+    click_button('Create Bookmarks')
+    expect(page).to have_current_path('/bookmarks/new')
+  end
 end
