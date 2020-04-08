@@ -8,7 +8,10 @@ class Bookmark
     @address = where
   end
   def self.all
-    @bookmarks =[Bookmark.new(where:"links",who:"bookmark one"),Bookmark.new(where:"link",who:"bookmark_two")]
+   # @bookmarks =[Bookmark.new(where:"links",who:"bookmark one"),Bookmark.new(where:"link",who:"bookmark_two")]
+   con = PG.connect :dbname => 'bookmark_manager', :user => 'edwardphillips'
+   rs = con.exec "SELECT * FROM bookmarks"
+   rs.map { |row| row['url']}
   end
 
   def self.new_bookmark(me, there)
