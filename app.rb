@@ -9,7 +9,10 @@ class Bookmarker < Sinatra::Base
 
   get '/bookmarks' do 
     @list = Bookmark.all.join("\n")
-    p @list
     erb(:bookmarks)
   end 
+
+  get 'bookmarks/new' do
+    erb(:bookmark_entry)
+  end
 end
