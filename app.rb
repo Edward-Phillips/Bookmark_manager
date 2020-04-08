@@ -12,7 +12,7 @@ class Bookmarker < Sinatra::Base
     erb(:bookmarks)
   end 
 
-  get 'bookmarks/new' do
+  get '/bookmarks/new' do
     erb(:bookmark_entry)
   end
 end
