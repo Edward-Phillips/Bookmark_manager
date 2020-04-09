@@ -17,8 +17,9 @@ feature 'Creating bookmarks' do
     visit('/')
     click_button('Create Bookmarks')
     fill_in('url', :with => 'HTTP://HALLO.COM')
+    fill_in('title', :with => 'hello')
     click_button('Save New Bookmark')
-    expect(page).to have_content('HTTP://HALLO.COM')
+    expect(page).to have_content('hello')
   end
 end
 
@@ -27,7 +28,7 @@ feature 'Adding a new bookmark' do
     visit('/bookmarks/new')
     fill_in('url', with: 'http://www.testbookmark.com')
     fill_in('title', with: 'Test Bookmark')
-    click_button('Submit')
+    click_button('Save New Bookmark')
 
     expect(page).to have_link('Test Bookmark', href: 'http://www.testbookmark.com')
   end

@@ -12,11 +12,11 @@ feature "showing bookmarks" do
     connection = PG.connect(dbname: 'bookmark_manager_test')
 
     # Add the test data
-    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
-    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
-    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")
+    connection.exec("INSERT INTO bookmarks (url, title) VALUES ('http://www.makersacademy.com', 'The bootcamp');")
+    connection.exec("INSERT INTO bookmarks (url, title) VALUES('http://www.destroyallsoftware.com', 'the anti singularity');")
+    connection.exec("INSERT INTO bookmarks (url, title) VALUES('http://www.google.com', 'google, good old google');")
     visit('/')
     click_button 'View Bookmarks'
-    expect(page).to have_content('http://www.makersacademy.com')
+    expect(page).to have_content('The bootcamp')
   end
 end

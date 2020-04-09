@@ -9,7 +9,7 @@ class Bookmarker < Sinatra::Base
   run! if app_file == $0
 
   get '/bookmarks' do 
-    @list = Bookmark.all.join(' <br>')
+    @list = Bookmark.all
     erb(:bookmarks)
   end 
 
@@ -18,7 +18,14 @@ class Bookmarker < Sinatra::Base
   end
 
   post '/bookmarks' do
-    Bookmark.create(url: params['url'])
+    Bookmark.create(url: params['url'], title: params['title'])
     redirect '/bookmarks'
+  end
+
+  get '/bookmarks/delete' do
+    erb(:bookmark_removal)
+  end
+  delete '/bookmarks' do
+    
   end
 end
