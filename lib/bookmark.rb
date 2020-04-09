@@ -14,6 +14,8 @@ class Bookmark
   end
 
   def self.create(url:)
+    self.connect
+    @con.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
   end
 
   def self.connect

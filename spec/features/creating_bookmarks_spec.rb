@@ -13,4 +13,11 @@ feature 'Creating bookmarks' do
     click_button('Create Bookmarks')
     expect(page).to have_field('url')
   end
+  scenario " the new saved bookmark should be visible on the view bookmarks page" do
+    visit('/')
+    click_button('Create Bookmarks')
+    fill_in('url', :with => 'HTTP://HALLO.COM')
+    click_button('Save New Bookmark')
+    expect(page).to have_content('HTTP://HALLO.COM')
+  end
 end
