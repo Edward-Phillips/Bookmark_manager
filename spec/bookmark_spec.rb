@@ -18,9 +18,9 @@ require 'bookmark'
 
 describe '.all' do
   it 'returns a list of bookmarks' do
-    Bookmark.create(url:'http://www.makersacademy.com')
-    Bookmark.create(url:'http://www.destroyallsoftware.com')
-    Bookmark.create(url:'http://www.google.com')
+    Bookmark.create(url:'http://www.makersacademy.com', title: 'the bootcamp')
+    Bookmark.create(url:'http://www.destroyallsoftware.com', title: 'the anti-singularity')
+    Bookmark.create(url:'http://www.google.com', title: 'accessory to evil')
 
     bookmarks = Bookmark.all
 
@@ -32,7 +32,7 @@ end
 
 describe "create" do
   it " should save the created bookmark so that it can be accessed through #all method. " do
-    Bookmark.create(url:'buh')
+    Bookmark.create(url: 'buh', title: 'hub')
     expect(Bookmark.all).to include('buh')
   end
 end

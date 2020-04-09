@@ -10,12 +10,13 @@ class Bookmark
   def self.all
     self.connect
     rs = @con.exec "SELECT * FROM bookmarks"
-    rs.map { |row| row['url']}
+    list =[]
+    rs.map { |row| list.push(Bookmark.new(where: row['url'], who: row['title']))}
   end
 
-  def self.create(url:)
+  def self.create(url:, title:)
     self.connect
-    @con.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
+    @con.exec("INSERT INTO bookmarks (url,title) VALUES('#{url}','#{title}')")
   end
 
   def self.connect
