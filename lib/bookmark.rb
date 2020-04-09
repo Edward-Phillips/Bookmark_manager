@@ -37,4 +37,9 @@ def self.good_url?(url)
   rescue URI::InvalidURIError
   false
 end
+
+def self.delete(id)
+  self.connect
+  @con.exec("DELETE FROM bookmarks WHERE id = '#{id}'")
+end
 end
