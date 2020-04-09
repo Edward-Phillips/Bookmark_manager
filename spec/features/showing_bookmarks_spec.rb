@@ -8,9 +8,15 @@ feature "showing bookmarks" do
     click_button 'View Bookmarks'
     expect(page).to have_current_path('/bookmarks')
   end 
-#  scenario " '/bookmarks' page should list all bookarks" do
-#    visit('/')
-#    click_button 'View Bookmarks'
-#    expect(page).to have_content('http://makersacademy.com')
-#  end
+  scenario " '/bookmarks' page should list all bookarks" do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+
+    # Add the test data
+    connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
+    connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")
+    visit('/')
+    click_button 'View Bookmarks'
+    expect(page).to have_content('http://www.makersacademy.com')
+  end
 end

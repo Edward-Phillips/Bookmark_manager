@@ -8,7 +8,7 @@ class Bookmarker < Sinatra::Base
   run! if app_file == $0
 
   get '/bookmarks' do 
-    @list = Bookmark.all.join("\n")
+    @list = Bookmark.all.join(' <br>')
     erb(:bookmarks)
   end 
 
