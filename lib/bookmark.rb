@@ -8,16 +8,19 @@ class Bookmark
     @address = where
   end
   def self.all
-    if ENV['RACK_ENV'] == 'test'
-      con = PG.connect :dbname => 'bookmark_manager_test', :user => 'edwardphillips'
-    else 
-      con = PG.connect :dbname => 'bookmark_manager', :user => 'edwardphillips'
-    end
-    rs = con.exec "SELECT * FROM bookmarks"
+    self.connect
+    rs = @con.exec "SELECT * FROM bookmarks"
     rs.map { |row| row['url']}
   end
 
-  def self.new_bookmark(me, there)
-    @bookmarks.push(Bookmark.new(who:me,where:there))
+  def self.create(url:)
+  end
+
+  def self.connect
+    if ENV['RACK_ENV'] == 'test'
+      @con = PG.connect :dbname => 'bookmark_manager_test', :user => 'edwardphillips'
+    else 
+      @con = PG.connect :dbname => 'bookmark_manager', :user => 'edwardphillips'
+    end
   end
 end
