@@ -12,8 +12,6 @@ require 'bookmark'
         expect(Bookmark.all).to all(be_instance_of(Bookmark))
       end
     end 
-  # to see  if it is an array 
-  # to see if they are bookmark instances 
   end
 
 describe '.all' do
